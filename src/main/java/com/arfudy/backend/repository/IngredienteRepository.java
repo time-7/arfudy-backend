@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.arfudy.backend.entity.Prato;
 
 @Repository
-public interface PratoRepository extends JpaRepository<Prato, Integer> {
+public interface IngredienteRepository extends JpaRepository<Prato, Integer> {
 }
