@@ -7,5 +7,4 @@ import com.arfudy.backend.entity.Prato;
 
 @Repository
 public interface PratoRepository extends JpaRepository<Prato, Integer> {
-
 }

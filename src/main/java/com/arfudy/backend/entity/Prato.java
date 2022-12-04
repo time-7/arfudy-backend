@@ -1,10 +1,15 @@
 package com.arfudy.backend.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,4 +42,7 @@ public class Prato implements Serializable {
     @Column(name = "valor_nutricional")
     private Double valorNutricional;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "ingrediente_prato", joinColumns = @JoinColumn(name = "id_prato"), inverseJoinColumns = @JoinColumn(name = "id_ingrediente"))
+    private List<Ingrediente> ingredienteList;
 }
